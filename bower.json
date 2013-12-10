@@ -1,0 +1,28 @@
+{
+  "name": "jquery.active-interval",
+  "version": "1.0.1",
+  "authors": [
+    "John Fawcett <jrf0110@gmail.com>"
+  ],
+  "description": "Cycle through the `active` class on a set of elements on an interval",
+  "main": "src/jquery.active-interval.js",
+  "keywords": [
+    "jquery",
+    "animate",
+    "text",
+    "speech",
+    "text"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.0.3"
+  },
+  "homepage": "https://github.com/jrf0110/jquery.active-interval"
+}
