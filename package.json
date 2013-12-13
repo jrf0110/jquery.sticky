@@ -1,6 +1,6 @@
 {
   "name": "jquery.active-interval",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Cycle through the `active` class on a set of elements on an interval",
   "main": "src/jquery.active-interval.js",
   "scripts": {
