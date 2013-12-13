@@ -10,6 +10,12 @@ var savingsInterval = $('.my-sayings > li').activeInterval({
 }).start();
 ```
 
+## Install
+
+```
+bower install jquery.active-rotator
+```
+
 ## Documentation
 
 __Options:__
