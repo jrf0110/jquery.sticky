@@ -1,19 +1,26 @@
-# jQuery `Active` Class Rotator
+# jQuery Sticky
 
-Applies an ```active``` class to a set of elements one at a time at a specific interval.
+Much like the bootstrap affix plugin, but with some improvements. This is still in early development and the transitions are a little jumpy, but I figure I'll put this here and fix it later.
+
+This plugin has two main benefits over Bootstrap affix:
+
+1. It does not depend on Bootstrap
+2. You can define scrollY start and endpoints for the sticky element
 
 ## Usage
 
 ```javascript
-var savingsInterval = $('.my-sayings > li').activeInterval({
-  interval: 3000
-}).start();
+// When the #side-nav comes into view, stick it to the screen
+$('#side-nav').sticky({
+  // Offset the sticky side-nav from the fixed header
+  offsetY: $('#header').height() + 20
+});
 ```
 
 ## Install
 
 ```
-bower install jquery.active-rotator
+bower install jquery.sticky
 ```
 
 ## Documentation
@@ -21,39 +28,55 @@ bower install jquery.active-rotator
 __Options:__
 
 ```javascript
-// Defaults
-{
-  // Time between each tick
-  interval:       5000
-  // Class name to use for active element
-, className:      'active'
-  // Class name to use for the next active element
-, upNext:         'up-next'
-  // Before the class change occurs
-, onTickBefore:   function( interval ){}
-  // As the class change occurs
-, onRotate:       function( $el, interval ){}
-};
+options: {
+  throttle   // How often do we execute the scroll listener in ms
+  offsetY    // Sticky offset from the top
+  stopAt     // Selector of the element whose bottom border should define
+             // the stopping point for the sticky element
+  onStick    // Called when the elements shifts to position fixed
+  onUnStick  // Called when the elements return to normal position
+  onStop     // Called when the elements shifts to position absolute
+}
 ```
 
-The plugin returns an interface for handling the rotation.
+The ```.sticky()``` function returns the following interface:
 
-### start()
+### Methods
 
-Starts the interval.
+#### stick()
 
-### stop()
+Manually stick the element into fixed position.
 
-Stops the interval.
+#### stickToBottom()
 
-### go( index )
+Manually stick the element to its stopping point into absolute position.
 
-Go to a specific position
+#### unstick()
 
-### next()
+Manually un-stick the element into static position.
 
-Got to the previous position
+#### isStuck()
 
-### prev()
+Returns a boolean. True if the element is in stuck position (fixed).
 
-Got to the next position
+#### startListening()
+
+Adds the scroll listener to window. This is called whenever the main plugin function is applied.
+
+#### stopListening()
+
+Remove the listener on window.
+
+### Properties
+
+#### $el
+
+The elements assigned.
+
+#### offsetTop
+
+The calculated offsetTop of the plugin element with the options.offsetY applied.
+
+#### stopAt
+
+When the ```options.stopAt``` selector is provided, this property stores the calculated window.scrollY value for sticking the element to the bottom.

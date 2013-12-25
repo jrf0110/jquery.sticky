@@ -1,17 +1,15 @@
 {
-  "name": "jquery.active-interval",
-  "version": "1.0.1",
+  "name": "jquery.sticky",
+  "version": "0.1.0",
   "authors": [
     "John Fawcett <jrf0110@gmail.com>"
   ],
-  "description": "Cycle through the `active` class on a set of elements on an interval",
-  "main": "src/jquery.active-interval.js",
+  "description": "Makes an element stick to the screen in an area while scrolling",
+  "main": "src/jquery.sticky.js",
   "keywords": [
     "jquery",
-    "animate",
-    "text",
-    "speech",
-    "text"
+    "affix",
+    "sticky"
   ],
   "license": "MIT",
   "ignore": [
@@ -24,5 +22,9 @@
   "dependencies": {
     "jquery": "~2.0.3"
   },
-  "homepage": "https://github.com/jrf0110/jquery.active-interval"
+  "homepage": "https://github.com/jrf0110/jquery.sticky",
+  "devDependencies": {
+    "jasmine": "~2.0.0",
+    "requirejs": "~2.1.9"
+  }
 }
