@@ -1,6 +1,6 @@
 {
   "name": "jquery.sticky",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Makes an element stick to the screen in an area while scrolling",
   "main": "src/jquery.sticky.js",
   "scripts": {
