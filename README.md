@@ -20,7 +20,7 @@ $('#side-nav').sticky({
 ## Install
 
 ```
-bower install jquery.sticky
+bower install jquery.sticky2
 ```
 
 ## Documentation
